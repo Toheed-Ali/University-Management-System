@@ -61,12 +61,12 @@ function requireRole(...roles) {
       log(`[ROLE] No user. Approved: [${roles.join(', ')}]. Path: ${req.path}`);
       return res.status(401).json({ success: false, error: 'Not authenticated' });
     }
-    
+
     if (!roles.includes(req.user.role)) {
       console.warn(`[ROLE-DEBUG] Forbidden. User role '${req.user.role}' not in [${roles.join(', ')}]. Path: ${req.path}`);
       return res.status(403).json({ success: false, error: 'Forbidden' });
     }
-    
+
     return next();
   };
 }
