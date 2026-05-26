@@ -1,0 +1,404 @@
+/* Page Transition Animations */
+.login-container {
+    animation: slideInFromLeft 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.login-left {
+    flex: 1;
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    position: relative;
+    animation: fadeSlideUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s both;
+}
+
+.login-left::before {
+    content: '';
+    position: absolute;
+    top: 32px;
+    left: 32px;
+    right: 32px;
+    bottom: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 9.6px;
+    pointer-events: none;
+}
+
+.login-right {
+    flex: 1;
+    background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 50%, #6D28D9 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+    animation: fadeSlideUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s both;
+}
+
+/* Decorative circles in background */
+.login-right::before {
+    content: '';
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    top: -80px;
+    right: -80px;
+    animation: pulseCircle 6s ease-in-out infinite;
+}
+
+.login-right::after {
+    content: '';
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    bottom: 80px;
+    left: -40px;
+    animation: pulseCircle 6s ease-in-out infinite 3s;
+}
+
+.login-form-wrapper {
+    width: 100%;
+    max-width: 304px;
+    padding: 2rem;
+}
+
+.login-form-wrapper>* {
+    animation: fadeIn 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.login-header {
+    margin-bottom: 2.5rem;
+    animation-delay: 0.3s;
+}
+
+.login-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+}
+
+.login-subtitle {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9375rem;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    animation-delay: 0.5s;
+}
+
+.login-container .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.login-container .form-input {
+    padding: 1rem 1.25rem;
+    background: #1A1A1A !important;
+    color: #ffffff !important;
+    border: 2px solid rgba(255, 255, 255, 0.235) !important;
+    border-radius: 12px !important;
+    font-size: 0.9375rem;
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+    width: 100%;
+    caret-color: white;
+}
+
+/* Fix Autofill background/text and suppress red underlines/spellcheck */
+.login-container .form-input:-webkit-autofill,
+.login-container .form-input:-webkit-autofill:hover,
+.login-container .form-input:-webkit-autofill:focus,
+.login-container .form-input:-webkit-autofill:active {
+    -webkit-text-fill-color: #ffffff !important;
+    -webkit-box-shadow: 0 0 0px 1000px #1A1A1A inset !important;
+    caret-color: white !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.login-container .form-input {
+    text-decoration: none !important;
+    box-shadow: none !important;
+    /* Suppress browser native underlines */
+    -webkit-spellcheck: false;
+}
+
+.login-container .form-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.login-container .form-input:focus {
+    outline: none;
+    border-color: #8B5CF6;
+    background: #1A1A1A !important;
+    box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.1) !important;
+}
+
+.password-input-wrapper {
+    position: relative;
+}
+
+.login-container .password-toggle {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    padding: 1rem;
+    transition: color 0.2s;
+}
+
+.login-container .password-toggle:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.login-submit-btn {
+    padding: 1rem 2rem;
+    background: #8B5CF6;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.login-submit-btn:hover {
+    background: #7C3AED;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+}
+
+.login-submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.login-submit-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.login-submit-btn:hover::after {
+    width: 240px;
+    height: 240px;
+}
+
+.welcome-content {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    max-width: 400px;
+}
+
+.welcome-content>* {
+    animation: fadeIn 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.welcome-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    animation-delay: 0.5s;
+}
+
+.welcome-title span {
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+.welcome-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+    animation-delay: 0.6s;
+}
+
+.welcome-image {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-top: 1rem;
+    animation: fadeIn 0.6s ease-out 0.7s forwards, float 4s ease-in-out infinite 1.3s;
+    opacity: 0;
+}
+
+.welcome-image img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+}
+
+.login-container .alert {
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    animation: alertSlideIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards !important;
+    opacity: 1 !important;
+    font-weight: 500;
+}
+
+.login-container .alert-success {
+    background: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+    border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.login-container .alert-error {
+    background: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+@keyframes alertSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes pulseCircle {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.08;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.12;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .login-container {
+        flex-direction: column;
+        overflow-y: auto;
+    }
+
+    .login-left {
+        min-height: 60vh;
+    }
+
+    .login-left::before {
+        top: 16px;
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+    }
+
+    .login-right {
+        min-height: 40vh;
+        padding: 2rem;
+    }
+
+    .welcome-title {
+        font-size: 2rem;
+    }
+
+    .welcome-image {
+        padding: 1rem;
+    }
+
+    .welcome-image img {
+        max-width: 200px;
+    }
+}

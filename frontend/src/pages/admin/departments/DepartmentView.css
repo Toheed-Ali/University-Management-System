@@ -1,0 +1,411 @@
+.department-view-container.content-area {
+    padding: 0.75rem 0.1rem !important;
+}
+
+.department-view-container .page-header {
+    margin-bottom: 2rem !important;
+    margin-top: 0.05rem !important;
+}
+
+.department-view-container .data-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.department-view-container .list-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--slate-100);
+}
+
+.dark .department-view-container .list-item {
+    border-bottom-color: var(--slate-700);
+}
+
+.department-view-container .list-item:last-child {
+    border-bottom: none;
+}
+
+.department-view-container .list-item-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--slate-50);
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.dark .department-view-container .list-item-icon {
+    background: var(--slate-700);
+}
+
+.department-view-container .list-item-content {
+    flex: 1;
+}
+
+.department-view-container .list-item-title {
+    font-weight: 600;
+    color: var(--slate-800);
+    font-size: 0.9375rem;
+}
+
+.dark .department-view-container .list-item-title {
+    color: white;
+}
+
+.department-view-container .list-item-subtitle {
+    color: var(--slate-500);
+    font-size: 0.8125rem;
+    margin-top: 0.125rem;
+}
+
+/* Batch & Section Hierarchy Styles */
+.department-view-container .batches-container {
+    padding: 0;
+}
+
+.department-view-container .batch-item {
+    border-bottom: 1px solid var(--slate-100);
+}
+
+.department-view-container .batch-item:last-child {
+    border-bottom: none;
+}
+
+.department-view-container .batch-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.department-view-container .batch-header:hover {
+    background: var(--slate-50);
+}
+
+.department-view-container .batch-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.department-view-container .batch-icon {
+    font-size: 1.5rem;
+    color: #8B5CF6;
+}
+
+.department-view-container .batch-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--slate-800);
+    margin: 0;
+}
+
+.department-view-container .badge {
+    background: var(--slate-100);
+    color: var(--slate-600);
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.department-view-container .expand-btn {
+    background: none;
+    border: none;
+    padding: 0.25rem;
+    cursor: pointer;
+    color: var(--slate-400);
+    display: flex;
+    align-items: center;
+}
+
+.department-view-container .batch-content {
+    padding: 0 1.5rem 1rem 1.5rem;
+    background: var(--slate-25);
+}
+
+.department-view-container .batch-actions {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--slate-100);
+    margin-bottom: 1rem;
+}
+
+.department-view-container .sections-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.department-view-container .section-item {
+    background: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    border: 1px solid var(--slate-100);
+}
+
+.department-view-container .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.department-view-container .section-header:hover {
+    background: var(--slate-50);
+}
+
+.department-view-container .section-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.department-view-container .section-icon {
+    font-size: 1.25rem;
+    color: #F59E0B;
+}
+
+.department-view-container .section-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--slate-700);
+    margin: 0;
+}
+
+.department-view-container .badge-sm {
+    background: #EEF2FF;
+    color: #6366F1;
+    padding: 0.125rem 0.5rem;
+    border-radius: 0.75rem;
+    font-size: 0.8125rem;
+    font-weight: 500;
+}
+
+.department-view-container .expand-icon {
+    color: var(--slate-400);
+    transition: transform 0.2s;
+}
+
+.department-view-container .section-students {
+    padding: 0;
+    background: var(--slate-50);
+}
+
+.department-view-container .section-students .list-item {
+    padding: 1rem 1.5rem;
+    background: white;
+    border-bottom: 1px solid var(--slate-100);
+}
+
+.department-view-container .icon-btn-danger {
+    background: none;
+    border: none;
+    color: var(--slate-400);
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 0.375rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.department-view-container .icon-btn-danger:hover {
+    color: #DC2626 !important;
+    background: #FEE2E2;
+}
+
+/* Modals Scoped */
+.department-view-container .modal-overlay {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.2s ease-out;
+}
+
+.department-view-container .modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 100%;
+    max-width: 320px;
+    box-shadow: 0 16px 20px -4px rgba(0, 0, 0, 0.1), 0 8px 8px -4px rgba(0, 0, 0, 0.04);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Dark mode isolates */
+.dark .department-view-container .batch-header:hover,
+.dark .department-view-container .section-header:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.dark .department-view-container .batch-title,
+.dark .department-view-container .section-title {
+    color: white;
+}
+
+.dark .department-view-container .batch-content {
+    background: #121212;
+}
+
+.dark .department-view-container .batch-actions {
+    border-bottom-color: var(--slate-700);
+}
+
+.dark .department-view-container .section-item {
+    background: #1E1E1E;
+    border-color: var(--slate-700);
+}
+
+.dark .department-view-container .section-students {
+    background: #121212;
+}
+
+.dark .department-view-container .section-students .list-item {
+    background: #1E1E1E;
+    border-bottom-color: var(--slate-700);
+}
+
+.dark .department-view-container .badge {
+    background: #2D2D2D;
+    color: var(--slate-300);
+}
+
+.dark .department-view-container .badge-sm {
+    background: rgba(99, 102, 241, 0.2);
+    color: #A5B4FC;
+}
+
+.dark .department-view-container .expand-btn,
+.dark .department-view-container .expand-icon {
+    color: var(--slate-500);
+}
+
+.dark .department-view-container .icon-btn-danger {
+    color: var(--slate-500);
+}
+
+.dark .department-view-container .icon-btn-danger:hover {
+    background: rgba(220, 38, 38, 0.2);
+}
+
+.dark .department-view-container .modal-content {
+    background-color: #1a1a1a !important;
+    border: 1px solid #2d2d2d;
+}
+
+.dark .department-view-container .modal-content h3 {
+    color: white;
+}
+
+.dark .department-view-container .empty-state p {
+    color: var(--slate-500);
+}
+
+.dark .department-view-container .empty-state span {
+    color: var(--slate-700) !important;
+}
+
+.department-view-container .btn-danger {
+    background: #DC2626;
+    color: white;
+    border: none;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+}
+
+.department-view-container .btn-danger:hover {
+    background: #B91C1C !important;
+}
+
+/* Modal Form Elements */
+.department-view-container .form-label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--slate-700);
+    font-size: 0.875rem;
+}
+
+.dark .department-view-container .form-label {
+    color: var(--slate-300);
+}
+
+.department-view-container .modal-input {
+    width: 100%;
+    padding: 0.625rem 0.875rem;
+    border: 1px solid var(--slate-300);
+    border-radius: 0.5rem;
+    background-color: white;
+    color: var(--slate-900);
+    font-size: 0.9375rem;
+    transition: all 0.2s;
+}
+
+.dark .department-view-container .modal-input {
+    background-color: #222;
+    border-color: #333;
+    color: #e2e8f0;
+}
+
+.department-view-container .modal-input:focus {
+    outline: none;
+    border-color: #8B5CF6;
+    box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+}
+
+.department-view-container .btn-secondary-custom {
+    padding: 0.625rem 1.25rem;
+    background: white;
+    border: 1px solid var(--slate-300);
+    border-radius: 0.5rem;
+    color: var(--slate-700);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.dark .department-view-container .btn-secondary-custom {
+    background: #2D2D2D;
+    border-color: #3D3D3D;
+    color: #E2E8F0;
+}
+
+.department-view-container .btn-secondary-custom:hover {
+    background: var(--slate-50);
+}
+
+.dark .department-view-container .btn-secondary-custom:hover {
+    background: #3D3D3D;
+}

@@ -1,0 +1,122 @@
+.student-attendance-row {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1fr 80px;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    background: var(--bg-card);
+    border-radius: 0.75rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid var(--border-color);
+}
+
+.toggle-switch {
+    position: relative;
+    width: 48px;
+    height: 24px;
+    display: inline-block;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #CBD5E1;
+    transition: 0.3s;
+    border-radius: 24px;
+    border: 2px solid #94A3B8;
+}
+
+.toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 17.6px;
+    width: 17.6px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: 0.3s;
+    border-radius: 50%;
+    box-shadow: 0 2px 3.2px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-switch input:checked+.toggle-slider {
+    background-color: #22C55E;
+    border-color: #16A34A;
+}
+
+.toggle-switch input:checked+.toggle-slider:before {
+    transform: translateX(24px);
+}
+
+/* Dark mode styles */
+.dark .toggle-slider {
+    background-color: #475569;
+    border-color: #64748B;
+}
+
+.dark .toggle-slider:before {
+    background-color: #F1F5F9;
+}
+
+.dark .toggle-switch input:checked+.toggle-slider {
+    background-color: #22C55E;
+    border-color: #16A34A;
+}
+
+.submit-attendance-btn {
+    background: var(--green-500);
+    color: white;
+    border: none;
+    padding: 0.875rem 2rem;
+    border-radius: 0.625rem;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 1.5rem;
+}
+
+.submit-attendance-btn:hover {
+    background: #16A34A;
+    transform: translateY(-1px);
+}
+
+.submit-attendance-btn:disabled {
+    background: var(--slate-300);
+    cursor: not-allowed;
+    transform: none;
+}
+
+.back-btn-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--slate-500);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.back-btn-link:hover {
+    color: var(--primary);
+}
+
+.empty-state {
+    text-align: center;
+    padding: 3rem;
+    color: var(--slate-500);
+}
+
+.empty-state .material-symbols-outlined {
+    font-size: 4rem;
+    color: var(--slate-400);
+    margin-bottom: 1rem;
+}

@@ -1,0 +1,74 @@
+.students-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: var(--bg-card);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 1px 2.4px rgba(0, 0, 0, 0.1);
+}
+
+.students-table th {
+    background: #1e293b;
+    padding: 1rem 1.5rem;
+    text-align: left;
+    font-weight: 600;
+    color: white;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.students-table td {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+.students-table tr:last-child td {
+    border-bottom: none;
+}
+
+.students-table tr:hover {
+    background: var(--background-light);
+}
+
+.dark .students-table {
+    background: var(--bg-card);
+}
+
+.dark .students-table th {
+    background: #0c1017;
+    color: white;
+    border-bottom-color: var(--slate-700);
+}
+
+.dark .students-table td {
+    border-color: var(--slate-700);
+    color: var(--slate-300);
+}
+
+.dark .students-table tr:hover {
+    background: var(--slate-700);
+}
+
+/* Page Header Styles matching Admin Dashboard */
+.page-header {
+    margin-bottom: 2rem;
+}
+
+.page-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.page-subtitle {
+    color: var(--text-secondary);
+    font-size: 0.9375rem;
+}

@@ -1,0 +1,153 @@
+.transcript-card {
+    background: var(--bg-card);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 1px 2.4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border-color);
+}
+
+.semester-header {
+    background: var(--slate-50);
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.semester-title {
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: var(--slate-800);
+    margin: 0;
+}
+
+.semester-stats {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.875rem;
+    color: var(--slate-600);
+}
+
+.transcript-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.transcript-table th {
+    background: var(--slate-50);
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: var(--slate-500);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.transcript-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-primary);
+    vertical-align: middle;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.transcript-table tr:last-child td {
+    border-bottom: none;
+}
+
+.transcript-table tr:hover {
+    background: var(--slate-50);
+}
+
+/* Dark Mode Overrides */
+.dark .transcript-card {
+    background: var(--bg-card);
+    border-color: var(--slate-700);
+}
+
+.dark .semester-header {
+    background: #0c1017;
+    border-color: var(--slate-700);
+}
+
+.dark .semester-title {
+    color: white;
+}
+
+.dark .semester-stats {
+    color: var(--slate-400);
+}
+
+.dark .transcript-table th {
+    background: #111827;
+    color: var(--slate-400);
+    border-color: var(--slate-700);
+}
+
+.dark .transcript-table td {
+    border-color: var(--slate-700);
+    color: var(--slate-300);
+}
+
+.dark .transcript-table tr:hover {
+    background: #1f2937;
+}
+
+.dark .text-slate-500 {
+    color: var(--slate-400);
+}
+
+.dark .text-slate-600 {
+    color: var(--slate-400);
+}
+
+.dark .text-slate-800 {
+    color: var(--slate-300);
+}
+
+.grade-badge {
+    padding: 0.25rem 0.625rem;
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.grade-pass {
+    background: rgba(34, 197, 94, 0.1);
+    color: #22c55e;
+}
+
+.grade-fail {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+}
+
+.grade-pending {
+    background: rgba(100, 116, 139, 0.1);
+    color: #64748b;
+    border: 1px solid rgba(100, 116, 139, 0.2);
+}
+
+.dark .grade-pass {
+    background: rgba(34, 197, 94, 0.2);
+    color: #4ade80;
+}
+
+.dark .grade-fail {
+    background: rgba(239, 68, 68, 0.2);
+    color: #f87171;
+}
+
+.dark .grade-pending {
+    background: rgba(148, 163, 184, 0.1);
+    color: #94a3b8;
+    border-color: rgba(148, 163, 184, 0.2);
+}

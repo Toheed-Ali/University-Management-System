@@ -1,0 +1,322 @@
+/* Registration Specific Styles */
+.registration-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+    .registration-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.course-reg-card {
+    padding: 1.25rem;
+    border-radius: 1rem;
+    border: 1px solid var(--slate-200);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.2s;
+    background: white;
+}
+
+.course-reg-card:hover {
+    border-color: var(--primary);
+}
+
+.course-reg-icon {
+    width: 38.4px;
+    height: 38.4px;
+    border-radius: 0.75rem;
+    background: linear-gradient(135deg, var(--primary-light) 0%, rgba(var(--primary-rgb), 0.1) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.course-reg-icon span {
+    color: var(--primary);
+    font-size: 1.5rem;
+}
+
+.course-reg-info {
+    flex: 1;
+}
+
+.course-reg-info h4 {
+    margin: 0 0 0.25rem 0;
+    font-weight: 600;
+    color: var(--slate-800);
+}
+
+.course-reg-info p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--slate-500);
+}
+
+.course-reg-meta {
+    text-align: right;
+}
+
+.course-credit-badge {
+    background: #E0E7FF;
+    color: #4F46E5;
+    padding: 0.25rem 0.75rem;
+    border-radius: 799.2px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.enrolled-badge {
+    background: #D1FAE5;
+    color: #059669;
+    padding: 0.25rem 0.75rem;
+    border-radius: 799.2px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.summary-card {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+/* Table Styles */
+.course-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+}
+
+.course-table th {
+    background-color: #1e293b;
+    color: #ffffff;
+    font-weight: 600;
+    text-align: left;
+    padding: 1rem;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+}
+
+.course-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+    color: #334155;
+    vertical-align: middle;
+}
+
+.course-table tr:hover {
+    background-color: #f8fafc;
+}
+
+/* Status Badges */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.35rem 0.5rem;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    font-size: 0.7rem;
+    color: white;
+    letter-spacing: 0.025em;
+    width: 92px;
+    height: 20px;
+    /* Increased for longer text like PENDING APPROVAL */
+    text-align: center;
+    white-space: nowrap;
+}
+
+.badge-enrolled {
+    background-color: #10B981;
+}
+
+.badge-not-enrolled {
+    background-color: #0EA5E9;
+}
+
+.badge-pending-approval {
+    background-color: #F59E0B;
+}
+
+.badge-rejected {
+    background-color: #EF4444;
+}
+
+/* Action Buttons */
+.action-btn {
+    border: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: white;
+    text-transform: uppercase;
+    width: 92px;
+    height: 20px;
+    text-align: center;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.action-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.action-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.btn-add {
+    background-color: #10B981;
+}
+
+.btn-add:hover {
+    background-color: #059669;
+    box-shadow: 0 3.2px 4.8px -1px rgba(16, 185, 129, 0.2);
+}
+
+.btn-drop {
+    background-color: #EF4444;
+}
+
+.btn-drop:hover {
+    background-color: #DC2626;
+    box-shadow: 0 3.2px 4.8px -1px rgba(239, 68, 68, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .registration-container {
+        overflow-x: auto;
+    }
+
+    .course-table {
+        min-width: 640px;
+    }
+}
+
+.summary-item {
+    text-align: center;
+}
+
+.summary-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+.summary-label {
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+/* Dark Mode Overrides */
+.dark .course-table td {
+    border-bottom-color: rgba(255, 255, 255, 0.05);
+    color: var(--slate-300);
+}
+
+.dark .course-table tr:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.dark .course-table th {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: var(--slate-400);
+}
+
+.dark .badge-enrolled {
+    background-color: rgba(16, 185, 129, 0.2);
+    color: #34D399;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.dark .badge-not-enrolled {
+    background-color: rgba(14, 165, 233, 0.2);
+    color: #7DD3FC;
+    border: 1px solid rgba(14, 165, 233, 0.3);
+}
+
+.dark .badge-pending-approval {
+    background-color: rgba(245, 158, 11, 0.2);
+    color: #FBBF24;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.dark .badge-rejected {
+    background-color: rgba(239, 68, 68, 0.2);
+    color: #FCA5A5;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.dark .course-reg-card {
+    background: #1E1E1E;
+    border-color: #2C2C2C;
+}
+
+.dark .course-reg-info h4 {
+    color: #F8FAFC;
+}
+
+.dark .course-reg-info p {
+    color: var(--slate-400);
+}
+
+.dark .action-btn {
+    box-shadow: none;
+}
+
+.dark .stat-card {
+    background: #1E1E1E !important;
+    border-color: #2C2C2C !important;
+}
+
+.dark .stat-value {
+    color: #F8FAFC;
+}
+
+.dark .stat-label {
+    color: var(--slate-400);
+}
+
+/* Spinner Animation */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin {
+    animation: spin 1s linear infinite;
+}

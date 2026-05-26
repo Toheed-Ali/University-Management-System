@@ -1,0 +1,207 @@
+/* Student Attendance Specific Styles */
+.attendance-course-card {
+    background: var(--bg-card);
+    border-radius: 0.875rem;
+    padding: 1.25rem 1.25rem 0.3rem 1.25rem;
+    border: 1px solid var(--border-color);
+    margin-bottom: 1rem;
+    transition: all 0.2s;
+}
+
+.attendance-course-card:hover {
+    border-color: var(--primary);
+}
+
+.attendance-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    cursor: pointer;
+}
+
+.attendance-percentage {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1;
+}
+
+.attendance-stats {
+    display: flex;
+    gap: 1.5rem;
+    margin: 0.75rem 0;
+    padding: 0.875rem;
+    background: var(--slate-50);
+    border-radius: 0.625rem;
+}
+
+.dark .attendance-stats {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-item-label {
+    font-size: 0.6875rem;
+    color: var(--slate-500);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+}
+
+.stat-item-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--slate-800);
+}
+
+.dark .stat-item-value {
+    color: #F8FAFC;
+}
+
+.progress-container {
+    margin: 0.75rem 0 0 0;
+}
+
+.progress-label {
+    font-size: 0.8125rem;
+    color: var(--slate-500);
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 0.75rem;
+    background: var(--slate-200);
+    border-radius: 7999.2px;
+    overflow: hidden;
+}
+
+.dark .progress-bar-container {
+    background: var(--slate-700);
+}
+
+.progress-bar {
+    height: 100%;
+    transition: width 0.5s ease;
+    background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+}
+
+.progress-bar.excellent {
+    background: linear-gradient(90deg, #22C55E, #16A34A);
+}
+
+.progress-bar.good {
+    background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+}
+
+.progress-bar.warning {
+    background: linear-gradient(90deg, #F59E0B, #D97706);
+}
+
+.progress-bar.danger {
+    background: linear-gradient(90deg, #EF4444, #DC2626);
+}
+
+.lecture-details {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.lecture-details.show {
+    grid-template-rows: 1fr;
+}
+
+.lecture-details-content {
+    min-height: 0;
+    padding-top: 1rem;
+}
+
+.lecture-row {
+    display: grid;
+    grid-template-columns: 80px 1fr 120px 80px;
+    align-items: center;
+    padding: 0.875rem 1rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .lecture-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+    }
+}
+
+.attendance-badge {
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.375rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-align: center;
+    display: inline-block;
+}
+
+.attendance-badge.present {
+    background: rgba(34, 197, 94, 0.1);
+    color: #16A34A;
+}
+
+.attendance-badge.absent {
+    background: rgba(239, 68, 68, 0.1);
+    color: #DC2626;
+}
+
+.attendance-badge.not-marked {
+    background: var(--slate-200);
+    color: var(--slate-600);
+}
+
+.dark .attendance-badge.not-marked {
+    background: var(--slate-700);
+    color: var(--slate-400);
+}
+
+.toggle-icon {
+    transition: transform 0.3s;
+}
+
+.toggle-icon.rotated {
+    transform: rotate(180deg);
+}
+
+.empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--slate-500);
+}
+
+.empty-state .material-symbols-outlined {
+    font-size: 5rem;
+    color: var(--slate-400);
+    margin-bottom: 1rem;
+}
+
+/* Spinner Animation */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin {
+    animation: spin 1s linear infinite;
+}

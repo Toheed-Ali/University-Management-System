@@ -1,0 +1,976 @@
+:root {
+    --primary: #8B5CF6;
+    --primary-light: rgba(139, 92, 246, 0.1);
+    --primary-dark: #7C3AED;
+    --slate-50: #F8FAFC;
+    --slate-100: #F1F5F9;
+    --slate-200: #E2E8F0;
+    --slate-300: #CBD5E1;
+    --slate-400: #94A3B8;
+    --slate-500: #64748B;
+    --slate-600: #475569;
+    --slate-700: #334155;
+    --slate-800: #1E293B;
+    --slate-900: #0F172A;
+    --bg-card: #FFFFFF;
+    --text-primary: #0F172A;
+    --text-secondary: #64748B;
+    --border-color: #F1F5F9;
+}
+
+.dark {
+    --bg-card: #1E1E1E;
+    --text-primary: #F3F4F6;
+    --text-secondary: #9CA3AF;
+    --border-color: #2C2C2C;
+    --slate-800: #F3F4F6;
+    --slate-700: #2C2C2C;
+    --slate-50: #121212;
+}
+
+/* OfferingList.css - Scoped to .offering-list-page-container with proper Dark Mode support */
+
+.offering-list-page-container .department-group {
+    background: var(--bg-card, #FFFFFF);
+    border-radius: 1rem;
+    border: 1px solid var(--slate-200);
+    overflow: hidden;
+    box-shadow: 0 3.2px 4.8px -1px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    margin-bottom: 0.6rem;
+}
+
+.dark .offering-list-page-container .department-group {
+    background: #1E1E1E;
+    border-color: #334155;
+    /* slate-700 */
+}
+
+.offering-list-page-container .department-group:hover {
+    box-shadow: 0 8px 12px -2.4px rgba(0, 0, 0, 0.1);
+}
+
+.offering-list-page-container .department-header {
+    padding: 1.1rem 1.5rem 0.2rem 1.5rem;
+    background: transparent;
+    border-bottom: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s;
+}
+
+.dark .offering-list-page-container .department-header {
+    background: transparent;
+    border-bottom: none;
+}
+
+.offering-list-page-container .department-header:hover {
+    background: transparent;
+}
+
+.dark .offering-list-page-container .department-header:hover {
+    background: transparent;
+}
+
+.offering-list-page-container .dept-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.offering-list-page-container .dept-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(139, 92, 246, 0.1);
+    color: #8B5CF6;
+    border-radius: 0.75rem;
+}
+
+.offering-list-page-container .department-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--slate-800);
+    line-height: 1;
+}
+
+.dark .offering-list-page-container .department-header h3 {
+    color: #F3F4F6;
+}
+
+.offering-list-page-container .badge {
+    background: var(--slate-100);
+    color: var(--slate-600);
+    padding: 0.25rem 0.75rem;
+    border-radius: 7999.2px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 1px solid var(--slate-200);
+}
+
+.dark .offering-list-page-container .badge {
+    background: #334155;
+    color: #CBD5E1;
+    border-color: #475569;
+}
+
+.offering-list-page-container .department-content-wrapper {
+    display: grid;
+    grid-template-rows: 1fr;
+    transition: grid-template-rows 0.3s ease-out;
+}
+
+.offering-list-page-container .department-group.collapsed .department-content-wrapper {
+    grid-template-rows: 0fr;
+}
+
+.offering-list-page-container .department-content-inner {
+    overflow: hidden;
+}
+
+.offering-list-page-container .department-content {
+    padding: 1.25rem 1.5rem;
+}
+
+.offering-list-page-container .expand-icon {
+    transition: transform 0.3s;
+    color: var(--slate-400);
+}
+
+.offering-list-page-container .department-group.collapsed .expand-icon {
+    transform: rotate(-90deg);
+}
+
+.offering-list-page-container .department-group.collapsed {
+    background: var(--bg-card, #FFFFFF) !important;
+    box-shadow: none !important;
+}
+
+.offering-list-page-container .department-group.collapsed .department-header {
+    border-bottom: none !important;
+    background: transparent !important;
+}
+
+.offering-list-page-container .semester-group {
+    margin-bottom: 1.25rem;
+}
+
+.offering-list-page-container .semester-group:last-child {
+    margin-bottom: 0;
+}
+
+.offering-list-page-container .semester-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    padding: 1rem 1.25rem;
+    background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%) !important;
+    border: 1px solid #E2E8F0 !important;
+    border-radius: 0.75rem !important;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+    overflow: hidden !important;
+}
+
+.dark .offering-list-page-container .semester-header {
+    background: linear-gradient(135deg, #262626 50%, #1E293B 100%) !important;
+    border-color: #334155 !important;
+}
+
+.offering-list-page-container .semester-group:not(.sem-collapsed) .semester-header {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+.offering-list-page-container .semester-group.sem-collapsed .semester-header {
+    border-radius: 0.75rem !important;
+}
+
+.offering-list-page-container .semester-header:hover {
+    box-shadow: 0 2px 6.4px rgba(139, 92, 246, 0.15);
+}
+
+.offering-list-page-container .semester-header h4 {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--slate-700);
+}
+
+.dark .offering-list-page-container .semester-header h4 {
+    color: #F3F4F6;
+}
+
+.offering-list-page-container .sem-expand-icon {
+    transition: transform 0.3s ease;
+    margin-left: auto;
+    font-size: 1.25rem;
+    color: var(--slate-400);
+}
+
+.offering-list-page-container .semester-group.sem-collapsed .sem-expand-icon {
+    transform: rotate(-90deg);
+}
+
+.offering-list-page-container .semester-content-wrapper {
+    display: grid;
+    grid-template-rows: 1fr;
+    transition: grid-template-rows 0.3s ease-out;
+}
+
+.offering-list-page-container .semester-group.sem-collapsed .semester-content-wrapper {
+    grid-template-rows: 0fr;
+}
+
+.offering-list-page-container .semester-content-inner {
+    overflow: hidden;
+}
+
+.offering-list-page-container .semester-content {
+    border: 1px solid #E2E8F0;
+    border-top: none;
+    border-bottom-left-radius: 0.75rem;
+    border-bottom-right-radius: 0.75rem;
+    background: rgba(255, 255, 255, 0.3);
+    padding: 1.25rem;
+}
+
+.dark .offering-list-page-container .semester-content {
+    border-color: #334155;
+    background: rgba(40, 40, 40, 0.4);
+}
+
+.offering-list-page-container .semester-group.sem-collapsed .semester-content {
+    border: none;
+}
+
+.offering-list-page-container .courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 1.25rem;
+}
+
+@media (max-width: 1024px) {
+    .offering-list-page-container .courses-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.offering-list-page-container .course-card-item {
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+    background: #FFFFFF;
+    border: 1px solid var(--slate-200);
+    border-radius: 1rem;
+    transition: all 0.2s;
+    position: relative;
+}
+
+.dark .offering-list-page-container .course-card-item {
+    background: #2D2D2D;
+    border-color: #475569;
+}
+
+.offering-list-page-container .course-card-item:hover {
+    border-color: #8B5CF6;
+    box-shadow: 0 3.2px 9.6px rgba(139, 92, 246, 0.05);
+    transform: translateY(-2px);
+}
+
+.dark .offering-list-page-container .course-card-item:hover {
+    border-color: var(--primary);
+    background: #333333;
+}
+
+.offering-list-page-container .course-header-row {
+    margin-bottom: 1rem;
+}
+
+.offering-list-page-container .course-title {
+    margin: 0 0 0.25rem 0;
+    font-weight: 700;
+    color: var(--slate-800);
+    font-size: 1rem;
+}
+
+.dark .offering-list-page-container .course-title {
+    color: #F3F4F6;
+}
+
+.offering-list-page-container .course-code-line {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--slate-500);
+    font-family: 'Monaco', 'Consolas', monospace;
+}
+
+.dark .offering-list-page-container .course-code-line {
+    color: #94A3B8;
+}
+
+.offering-list-page-container .course-actions-top-right {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.offering-list-page-container .enrollment-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.625rem;
+    border-radius: 7999.2px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+}
+
+.offering-list-page-container .enrollment-badge.pending {
+    background: #FFF7ED;
+    color: #C2410C;
+    border: 1px solid #FFEDD5;
+}
+
+.dark .offering-list-page-container .enrollment-badge.pending {
+    background: rgba(251, 146, 60, 0.1);
+    color: #FB923C;
+    border-color: rgba(251, 146, 60, 0.2);
+}
+
+.offering-list-page-container .enrollment-badge.enrolled {
+    background: #ECFDF5;
+    color: #047857;
+    border: 1px solid #D1FAE5;
+}
+
+.dark .offering-list-page-container .enrollment-badge.enrolled {
+    background: rgba(52, 211, 153, 0.1);
+    color: #34D399;
+    border-color: rgba(52, 211, 153, 0.2);
+}
+
+.offering-list-page-container .enrollment-badge:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 3.2px rgba(0, 0, 0, 0.05);
+}
+
+.offering-list-page-container .course-sections-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.offering-list-page-container .section-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 0;
+    border-top: 1px solid var(--slate-100);
+    width: 100%;
+    min-width: 0;
+}
+
+.dark .offering-list-page-container .section-row {
+    border-color: #334155;
+}
+
+.offering-list-page-container .meta-value {
+    font-size: 0.85rem;
+    color: var(--slate-700);
+    font-weight: 500;
+}
+
+.offering-list-page-container .teacher-name {
+    font-weight: 500;
+    color: var(--slate-700);
+    font-size: 0.85rem;
+}
+
+.dark .offering-list-page-container .teacher-name {
+    color: #CBD5E1;
+}
+
+.offering-list-page-container .teacher-name.unassigned {
+    color: #F59E0B;
+}
+
+.dark .offering-list-page-container .teacher-name.unassigned {
+    color: #FBB03B;
+}
+
+.dark .offering-list-page-container .meta-value {
+    color: #CBD5E1;
+}
+
+.offering-list-page-container .section-badge {
+    display: inline-block;
+    background: #EFF6FF;
+    color: #3B82F6;
+    padding: 2px 6.4px;
+    border-radius: 3.2px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.dark .offering-list-page-container .section-badge {
+    background: rgba(59, 130, 246, 0.2);
+    color: #60A5FA;
+}
+
+.status-indicator-submitted {
+    display: inline-flex;
+    align-items: center;
+    background: #D1FAE5;
+    color: #059669;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 7999.2px;
+    border: 1px solid #A7F3D0;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    white-space: nowrap;
+}
+
+.dark .status-indicator-submitted {
+    background: rgba(16, 185, 129, 0.1);
+    color: #34D399;
+    border-color: rgba(16, 185, 129, 0.2);
+}
+
+.offering-list-page-container .icon-btn-sm {
+    background: transparent;
+    border: 1px solid transparent;
+    cursor: pointer;
+    padding: 0.375rem;
+    color: var(--slate-400);
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.offering-list-page-container .icon-btn-sm:hover {
+    background: var(--slate-50);
+    border-color: var(--slate-200);
+    color: var(--slate-700);
+}
+
+.dark .offering-list-page-container .icon-btn-sm:hover {
+    background: #334155;
+    color: white;
+}
+
+.offering-list-page-container .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(6.4px);
+    -webkit-backdrop-filter: blur(6.4px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.offering-list-page-container .modal-content {
+    background: #FFFFFF;
+    border-radius: 1.5rem;
+    padding: 2.25rem;
+    width: 100%;
+    max-width: 800px;
+    /* Slightly wider to accommodate calendar icons and grid */
+    box-shadow: 0 20px 40px -9.6px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    margin: auto;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(16px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.dark .offering-list-page-container .modal-content {
+    background: #111111;
+    border-color: #2c2c2c;
+    box-shadow: 0 20px 40px -9.6px rgba(0, 0, 0, 0.5);
+}
+
+.offering-list-page-container .modal-header {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.offering-list-page-container .modal-title {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--slate-900);
+    letter-spacing: -0.025em;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.dark .offering-list-page-container .modal-title {
+    color: #FFFFFF;
+}
+
+.offering-list-page-container .modal-close-btn {
+    background: var(--slate-100);
+    border: none;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--slate-500);
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: -0.5rem;
+    margin-right: -0.5rem;
+}
+
+.dark .offering-list-page-container .modal-close-btn {
+    background: #2c2c2c;
+    color: var(--slate-400);
+}
+
+.offering-list-page-container .modal-close-btn:hover {
+    background: var(--slate-200);
+    color: var(--slate-800);
+    transform: rotate(90deg);
+}
+
+.dark .offering-list-page-container .modal-close-btn:hover {
+    background: #3d3d3d;
+    color: #FFFFFF;
+}
+
+.offering-list-page-container .modal-body-text {
+    color: var(--slate-500);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.dark .offering-list-page-container .modal-body-text {
+    color: var(--slate-400);
+}
+
+.offering-list-page-container .modal-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.offering-list-page-container .modal-label {
+    display: block;
+    color: var(--slate-700);
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.dark .offering-list-page-container .modal-label {
+    color: var(--slate-300);
+}
+
+.offering-list-page-container .modal-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.offering-list-page-container .modal-input-wrapper .calendar-icon {
+    position: absolute;
+    right: 1.125rem;
+    color: var(--slate-400);
+    pointer-events: none;
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+}
+
+.offering-list-page-container .modal-input {
+    width: 100% !important;
+    padding: 0.875rem 1.125rem !important;
+    padding-right: 3rem !important;
+    /* Space for icon */
+    border: 2px solid #e2e8f0 !important;
+    border-radius: 0.9rem !important;
+    background: #FFFFFF !important;
+    color: #1E293B !important;
+    font-size: 0.9375rem !important;
+    transition: all 0.2s !important;
+    outline: none !important;
+    font-family: inherit !important;
+    height: 3.25rem !important;
+    /* Fixed height for better alignment */
+}
+
+/* Specific styling for internal datetime-local indicator to improve UI */
+.offering-list-page-container .modal-input::-webkit-calendar-picker-indicator {
+    position: absolute;
+    right: 0.75rem;
+    top: 0;
+    width: 2.5rem;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.dark .offering-list-page-container .modal-input {
+    background: #222222 !important;
+    border-color: #2c2c2c !important;
+    color: #FFFFFF !important;
+}
+
+.offering-list-page-container .modal-input:focus {
+    border-color: #8b5cf6 !important;
+    box-shadow: 0 0 0 3.2px rgba(139, 92, 246, 0.1) !important;
+}
+
+.offering-list-page-container .current-window-info {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(139, 92, 246, 0.03) 100%);
+    border-radius: 1.25rem;
+    border: 1px solid rgba(139, 92, 246, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.dark .offering-list-page-container .current-window-info {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.12) 0%, rgba(139, 92, 246, 0.05) 100%);
+    border-color: rgba(139, 92, 246, 0.2);
+}
+
+.offering-list-page-container .current-window-text {
+    margin: 0;
+    color: var(--slate-600);
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+.dark .offering-list-page-container .current-window-text {
+    color: #CBD5E1;
+}
+
+.offering-list-page-container .modal-footer {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2.5rem;
+}
+
+.offering-list-page-container .btn-secondary-modal {
+    flex: 1;
+    height: 3.5rem;
+    background: #f1f5f9;
+    color: #475569;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.dark .offering-list-page-container .btn-secondary-modal {
+    background: #2c2c2c;
+    color: var(--slate-300);
+}
+
+.offering-list-page-container .btn-secondary-modal:hover {
+    background: #e2e8f0;
+    color: #1e293b;
+}
+
+.dark .offering-list-page-container .btn-secondary-modal:hover {
+    background: #3d3d3d;
+    color: #FFFFFF;
+}
+
+.offering-list-page-container .btn-primary-modal {
+    flex: 2;
+    height: 3.5rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.offering-list-page-container .btn-primary-modal:hover {
+    background: #7C3AED;
+    transform: translateY(-2px);
+    box-shadow: 0 6.4px 16px rgba(139, 92, 246, 0.3);
+}
+
+/* ========================================
+   Offering Form Specific Styles (Exact Copy of Department Form)
+   ======================================== */
+
+.offering-management-page .card {
+    border-radius: 1.25rem !important;
+}
+
+.offering-form-section-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--slate-800);
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--slate-100);
+}
+
+.dark .offering-form-section-title {
+    color: white !important;
+    border-bottom-color: #2C2C2C !important;
+}
+
+.offering-management-page .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.offering-management-page .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.offering-management-page .form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.offering-management-page .form-label {
+    font-weight: 600;
+    color: var(--slate-700);
+    font-size: 0.875rem;
+    display: block;
+}
+
+.dark .offering-management-page .form-label {
+    color: var(--slate-300);
+}
+
+/* High Specificity Custom Input Styles */
+.offering-management-page .offering-input-field {
+    width: 100% !important;
+    padding: 0.875rem 1.125rem !important;
+    border: 2px solid #e2e8f0 !important;
+    border-radius: 0.9rem !important;
+    font-size: 0.9375rem !important;
+    line-height: normal !important;
+    background-color: #ffffff !important;
+    color: #1e293b !important;
+    transition: all 0.2s ease !important;
+    outline: none !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    height: 3rem;
+}
+
+.offering-management-page .offering-input-field::placeholder {
+    color: #99a1ac !important;
+    opacity: 1 !important;
+}
+
+.offering-management-page .offering-input-field::-webkit-input-placeholder {
+    color: #99a1ac !important;
+    opacity: 1 !important;
+}
+
+.dark .offering-management-page .offering-input-field {
+    background-color: #222222 !important;
+    border-color: #2c2c2c !important;
+    color: #e2e8f0 !important;
+}
+
+.dark .offering-management-page .offering-input-field::placeholder {
+    color: #94a3b8 !important;
+    opacity: 0.8 !important;
+}
+
+.offering-management-page .offering-input-field:focus {
+    border-color: #8b5cf6 !important;
+    box-shadow: 0 0 0 3.2px rgba(139, 92, 246, 0.1) !important;
+}
+
+/* Custom Select Arrow for Unique Class */
+.offering-management-page select.offering-input-field {
+    cursor: pointer !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748B'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 1.25rem center !important;
+    background-size: 1.25rem !important;
+    padding-right: 3.5rem !important;
+}
+
+.dark .offering-management-page select.offering-input-field {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2394A3B8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E") !important;
+}
+
+/* Form Actions */
+.offering-management-page .form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 2.5rem;
+    align-items: center;
+}
+
+.offering-management-page .auth-submit-btn {
+    height: 3.5rem;
+    padding: 0 2rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-width: 160px;
+}
+
+.offering-management-page .auth-submit-btn:hover:not(:disabled) {
+    background: #7C3AED;
+    transform: translateY(-2px);
+    box-shadow: 0 6.4px 16px rgba(139, 92, 246, 0.3);
+}
+
+.offering-management-page .auth-submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.offering-management-page .btn-cancel-custom {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 3.5rem;
+    padding: 0 2rem;
+    background: #f1f5f9;
+    color: #475569;
+    text-decoration: none;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+}
+
+.dark .offering-management-page .btn-cancel-custom {
+    background: #2C2C2C !important;
+    color: #E2E8F0 !important;
+    border-color: #3D3D3D !important;
+}
+
+.offering-management-page .btn-cancel-custom:hover {
+    background: var(--slate-200);
+    transform: translateY(-1px);
+}
+
+.dark .offering-management-page .btn-cancel-custom:hover {
+    background: #3D3D3D !important;
+}
+
+.offering-management-page .alert {
+    padding: 1rem 1.25rem;
+    border-radius: 0.75rem;
+    margin-bottom: 1.5rem;
+    display: none;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 500;
+}
+
+.offering-management-page .alert.show {
+    display: flex;
+}
+
+.offering-management-page .alert-success {
+    background: #DCFCE7;
+    color: #166534;
+    border: 1px solid #86EFAC;
+}
+
+.offering-management-page .alert-error {
+    background: #FEE2E2;
+    color: #991B1B;
+    border: 1px solid #FCA5A5;
+}
+
+.offering-management-page .alert .material-symbols-outlined {
+    font-size: 1.25rem;
+}
+
+@media (max-width: 768px) {
+    .offering-management-page .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .offering-management-page .form-actions {
+        flex-direction: column-reverse;
+    }
+
+    .offering-management-page .auth-submit-btn,
+    .offering-management-page .btn-cancel-custom {
+        width: 100%;
+        min-width: 0;
+    }
+}

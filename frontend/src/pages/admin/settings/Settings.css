@@ -1,0 +1,157 @@
+.settings-page-container {
+    width: 100%;
+}
+
+.settings-page-container .page-header {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+}
+
+.dark .settings-page-container .page-subtitle {
+    color: #94A3B8 !important;
+}
+
+.settings-page-container .card {
+    background-color: var(--bg-card, #FFFFFF);
+    border-radius: 0.875rem;
+    box-shadow: 0 1px 2.4px 0 rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--slate-100);
+    overflow: hidden;
+}
+
+.dark .settings-page-container .card {
+    background-color: #1E1E1E !important;
+    border-color: #2c2c2c !important;
+}
+
+.settings-page-container .card-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--slate-100);
+}
+
+.dark .settings-page-container .card-header {
+    border-bottom-color: #2c2c2c !important;
+}
+
+.settings-page-container .card-header h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.dark .settings-page-container .card-header h3 {
+    color: #F3F4F6 !important;
+}
+
+.settings-page-container .card-body {
+    padding: 2rem;
+}
+
+.settings-page-container .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .settings-page-container .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.settings-page-container .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.settings-page-container .form-label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.dark .settings-page-container .form-label {
+    color: #9CA3AF !important;
+}
+
+.settings-page-container .form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--slate-200);
+    border-radius: 0.625rem;
+    font-size: 0.9375rem;
+    transition: all 0.2s;
+    background: #FFFFFF;
+    color: #0F172A;
+}
+
+.dark .settings-page-container .form-input {
+    background-color: #262626 !important;
+    border-color: #2c2c2c !important;
+    color: white !important;
+}
+
+.settings-page-container .form-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2.4px rgba(139, 92, 246, 0.1);
+}
+
+.settings-page-container .form-input[readonly] {
+    background-color: var(--slate-50);
+    cursor: default;
+}
+
+.dark .settings-page-container .form-input[readonly] {
+    background-color: #1a1a1a !important;
+}
+
+.settings-page-container .btn-save {
+    padding: 0.75rem 2rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 1.5rem;
+}
+
+.settings-page-container .btn-save:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 3.2px 4.8px -1px rgba(0, 0, 0, 0.1);
+}
+
+.settings-page-container .form-input:disabled {
+    background-color: var(--slate-50);
+    cursor: not-allowed;
+}
+
+.dark .settings-page-container .form-input:disabled {
+    background-color: #1a1a1a !important;
+}
+
+/* Fix for multiple chevrons in select */
+select.form-input {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: calc(100% - 1rem) center !important;
+    background-size: 1.25rem !important;
+    padding-right: 3rem !important;
+}
+
+.dark select.form-input {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2394a3b8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: calc(100% - 1rem) center !important;
+}

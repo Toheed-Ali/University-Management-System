@@ -1,0 +1,955 @@
+/* ========================================
+   Student List Page - Specific Styles
+   ======================================== */
+
+:root {
+    --primary: #8B5CF6;
+    --primary-hover: #7C3AED;
+    --slate-50: #f8fafc;
+    --slate-100: #f1f5f9;
+    --slate-200: #e2e8f0;
+    --slate-300: #cbd5e1;
+    --slate-400: #94a3b8;
+    --slate-500: #64748b;
+    --slate-600: #475569;
+    --slate-700: #334155;
+    --slate-800: #1e293b;
+    --slate-900: #0f172a;
+}
+
+/* Scoped Card Style */
+.student-management-page .card:not(.stat-card) {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 3.2px 4.8px -1px rgba(0, 0, 0, 0.1), 0 2px 3.2px -1px rgba(0, 0, 0, 0.06);
+    border: 1px solid var(--slate-100);
+}
+
+/* Input and Select Styling */
+/* Input and Select Styling */
+/* Scoped Input and Select Styling */
+.student-management-page input[type="text"],
+.student-management-page input[type="email"],
+.student-management-page input[type="password"],
+.student-management-page input[type="tel"],
+.student-management-page input[type="date"],
+.student-management-page input[type="number"],
+.student-management-page select {
+    width: 100%;
+    padding: 0.7rem 1rem !important;
+    border: 2px solid #E2E8F0;
+    border-radius: 0.75rem;
+    font-size: 0.9375rem;
+    background-color: white;
+    color: var(--slate-800);
+    font-family: 'Inter', sans-serif;
+    transition: border-color 0.2s;
+}
+
+.student-management-page input[type="text"]:focus,
+.student-management-page input[type="email"]:focus,
+.student-management-page input[type="password"]:focus,
+.student-management-page input[type="tel"]:focus,
+.student-management-page input[type="date"]:focus,
+.student-management-page input[type="number"]:focus,
+.student-management-page select:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+/* Cross-browser placeholder styling - Scoped to student-management-page */
+.student-management-page input::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: var(--slate-500) !important;
+    opacity: 1 !important;
+}
+
+.student-management-page input::-moz-placeholder {
+    /* Firefox 19+ */
+    color: var(--slate-500) !important;
+    opacity: 1 !important;
+}
+
+.student-management-page input:-ms-input-placeholder {
+    /* IE 10+ */
+    color: var(--slate-500) !important;
+    opacity: 1 !important;
+}
+
+.student-management-page input:-moz-placeholder {
+    /* Firefox 18- */
+    color: var(--slate-500) !important;
+    opacity: 1 !important;
+}
+
+.student-management-page input::placeholder {
+    color: var(--slate-500) !important;
+    opacity: 1 !important;
+}
+
+
+/* Select dropdown options */
+.student-management-page select option {
+    background-color: white;
+    color: var(--slate-800);
+    padding: 0.5rem;
+}
+
+.student-management-page.dark select option,
+.dark .student-management-page select option {
+    background-color: #262626;
+    color: white;
+}
+
+/* Dark mode input styling */
+.student-management-page.dark input[type="text"],
+.dark .student-management-page input[type="text"],
+.student-management-page.dark input[type="email"],
+.dark .student-management-page input[type="email"],
+.student-management-page.dark input[type="password"],
+.dark .student-management-page input[type="password"],
+.student-management-page.dark input[type="tel"],
+.dark .student-management-page input[type="tel"],
+.student-management-page.dark input[type="date"],
+.dark .student-management-page input[type="date"],
+.student-management-page.dark input[type="number"],
+.dark .student-management-page input[type="number"],
+.student-management-page.dark select,
+.dark .student-management-page select {
+    background-color: #262626 !important;
+    border-color: var(--slate-700) !important;
+    color: white !important;
+}
+
+/* Label styling */
+.student-management-page label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+    color: var(--slate-700);
+}
+
+.student-management-page.dark label,
+.dark .student-management-page label {
+    color: var(--slate-400) !important;
+}
+
+/* Scoped Table Styles */
+.student-management-page .table-container {
+    overflow-x: auto;
+}
+
+.student-management-page .data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.student-management-page .data-table th {
+    text-align: left;
+    padding: 1rem;
+    background: var(--slate-50);
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--slate-700);
+    border-bottom: 2px solid var(--slate-200);
+}
+
+.student-management-page.dark .data-table th,
+.dark .student-management-page .data-table th {
+    background: #262626 !important;
+    color: var(--slate-400) !important;
+    border-bottom-color: var(--slate-700) !important;
+}
+
+.student-management-page .data-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--slate-100);
+    font-size: 0.9375rem;
+    color: var(--slate-700);
+}
+
+.student-management-page.dark .data-table td,
+.dark .student-management-page .data-table td {
+    border-bottom-color: var(--slate-700);
+    color: var(--slate-300);
+}
+
+.student-management-page .data-table tbody tr {
+    transition: background-color 0.15s ease;
+}
+
+.student-management-page .data-table tbody tr:hover {
+    background: var(--slate-50);
+}
+
+.student-management-page.dark .data-table tbody tr:hover,
+.dark .student-management-page .data-table tbody tr:hover {
+    background: rgba(139, 92, 246, 0.05) !important;
+}
+
+.student-management-page .data-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Scoped Icon Buttons */
+.student-management-page .icon-btn {
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--slate-100);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: var(--slate-600);
+}
+
+.student-management-page .icon-btn:hover {
+    background: var(--primary);
+    color: white;
+    transform: scale(1.05);
+}
+
+.student-management-page .icon-btn.danger:hover {
+    background: #EF4444;
+    color: white;
+}
+
+.student-management-page .icon-btn .material-symbols-outlined {
+    font-size: 1.125rem;
+}
+
+.student-management-page.dark .icon-btn,
+.dark .student-management-page .icon-btn {
+    background-color: var(--slate-700);
+    color: var(--slate-300);
+}
+
+.student-management-page.dark .icon-btn:hover,
+.dark .student-management-page .icon-btn:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+.student-management-page.dark .icon-btn.danger:hover,
+.dark .student-management-page .icon-btn.danger:hover {
+    background: #EF4444 !important;
+    color: white;
+}
+
+/* Scoped Status Badges */
+.student-management-page .status-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    min-width: 48px;
+    line-height: 1;
+}
+
+.student-management-page .status-badge.status-active {
+    background-color: rgba(34, 197, 94, 0.1);
+    color: #16A34A;
+}
+
+.student-management-page .status-badge.status-inactive,
+.student-management-page .status-badge.status-suspended {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: #DC2626;
+}
+
+.student-management-page .status-badge.status-graduated {
+    background-color: rgba(59, 130, 246, 0.1);
+    color: #2563EB;
+}
+
+/* Scoped Empty State */
+.student-management-page .empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+}
+
+.student-management-page .empty-state h3 {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    color: var(--slate-700);
+}
+
+.student-management-page.dark .empty-state h3,
+.dark .student-management-page .empty-state h3 {
+    color: white;
+}
+
+.student-management-page .empty-state p {
+    color: var(--slate-500);
+}
+
+/* Scoped Semester Card */
+.student-management-page .semester-card {
+    padding: 0 !important;
+}
+
+.student-management-page.dark .semester-card,
+.dark .student-management-page .semester-card {
+    border-color: var(--slate-700) !important;
+}
+
+.student-management-page .semester-header {
+    width: 100%;
+    border-radius: 0.75rem 0.75rem 0 0 !important;
+    transition: all 0.2s;
+}
+
+.student-management-page .semester-header.collapsed {
+    border-radius: 0.75rem !important;
+}
+
+.student-management-page.dark .semester-header,
+.dark .student-management-page .semester-header {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(59, 130, 246, 0.05) 100%) !important;
+}
+
+.student-management-page.dark .semester-header h3,
+.dark .student-management-page .semester-header h3 {
+    color: white !important;
+}
+
+.student-management-page.dark .semester-header p,
+.dark .student-management-page .semester-header p {
+    color: var(--slate-400) !important;
+}
+
+.student-management-page .expand-btn {
+    background: none;
+    border: none;
+    padding: 0.25rem;
+    cursor: pointer;
+    color: var(--slate-400);
+    transition: transform 0.2s;
+}
+
+.student-management-page .expand-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Scoped Buttons */
+.student-management-page .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: #8B5CF6;
+    color: white;
+    text-decoration: none;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.student-management-page .btn-primary:hover {
+    background: #7C3AED;
+    transform: translateY(-1px);
+    box-shadow: 0 3.2px 4.8px -1px rgba(139, 92, 246, 0.3);
+}
+
+.student-management-page .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: #22C55E;
+    color: white;
+    border: none;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.student-management-page .btn-secondary:hover {
+    background: #16A34A;
+    transform: translateY(-1px);
+    box-shadow: 0 3.2px 4.8px -1px rgba(34, 197, 94, 0.3);
+}
+
+/* Dark Mode Page Elements */
+.dark .page-title {
+    color: white !important;
+}
+
+.dark .page-subtitle {
+    color: var(--slate-400) !important;
+}
+
+.dark .card {
+    background-color: #1E1E1E !important;
+    border-color: var(--slate-700) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .data-table {
+        font-size: 0.875rem;
+    }
+
+    .data-table th,
+    .data-table td {
+        padding: 0.75rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .data-table {
+        font-size: 0.8125rem;
+    }
+
+    .data-table th,
+    .data-table td {
+        padding: 0.625rem;
+    }
+
+    .icon-btn {
+        width: 1.75rem;
+        height: 1.75rem;
+        padding: 0.25rem;
+    }
+
+    .icon-btn .material-symbols-outlined {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 640px) {
+
+    .btn-primary,
+    .btn-secondary {
+        padding: 0.625rem 1rem;
+        font-size: 0.875rem;
+    }
+}
+
+/* ========================================
+   Student View Page Styles
+   ======================================== */
+
+.student-view-container {
+    max-width: 720px;
+}
+
+.student-view-card {
+    padding: 2.5rem !important;
+    border-radius: 1rem !important;
+}
+
+.dark .student-view-card {
+    background-color: #1d1d1d !important;
+    border-color: #2e2e2e !important;
+}
+
+.student-header-avatar {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 1rem;
+    background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.75rem;
+    box-shadow: 0 3.2px 12px rgba(139, 92, 246, 0.4);
+}
+
+.btn-manage-password {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.25rem;
+    background: #f1f5f9;
+    color: #475569;
+    border: none;
+    border-radius: 0.625rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: all 0.2s;
+}
+
+.dark .btn-manage-password {
+    background: #ffffff;
+    color: #171717;
+}
+
+.btn-manage-password:hover {
+    background: #e2e8f0;
+}
+
+.dark .btn-manage-password:hover {
+    background: #4a5568;
+}
+
+.student-view-section-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #1e293b;
+    letter-spacing: -0.01em;
+}
+
+.dark .student-view-section-title {
+    color: #f8fafc !important;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start !important;
+    text-align: left !important;
+}
+
+.info-item label {
+    font-weight: 600;
+    color: #6a7587;
+    font-size: 0.7725rem;
+    margin-bottom: -0.4rem;
+    text-transform: none;
+    text-align: left !important;
+}
+
+.info-item p {
+    font-weight: 500;
+    margin: 0;
+    color: #1e293b;
+    font-size: 0.95rem;
+    text-align: left !important;
+}
+
+.dark .info-item p {
+    color: #f8fafc;
+}
+
+.dark .info-item label {
+    color: #94a3b8;
+}
+
+.info-item .roll-number {
+    color: #8B5CF6 !important;
+    font-weight: 800;
+    font-size: 1.2rem !important;
+}
+
+.dark .info-item .roll-number {
+    color: #a78bfa !important;
+    font-weight: 800;
+    font-size: 1.2rem !important;
+}
+
+.info-item .cgpa-value {
+    color: #22C55E !important;
+    font-weight: 800;
+    font-size: 1.2rem !important;
+}
+
+.dark .info-item .cgpa-value {
+    color: #4ade80 !important;
+    font-weight: 800;
+    font-size: 1.2rem !important;
+}
+
+/* Page Header Adjustments */
+.header-right-subtitle {
+    color: #64748b;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.dark .header-right-subtitle {
+    color: #94a3b8;
+}
+
+/* Modal Styles */
+.modal-overlay {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3.2px);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    width: 100%;
+    max-width: 320px;
+    padding: 2rem !important;
+}
+
+.student-management-page .modal-title {
+    color: var(--slate-800) !important;
+    font-weight: 700;
+}
+
+.student-management-page.dark .modal-title,
+.dark .student-management-page .modal-title {
+    color: white !important;
+}
+
+.auth-submit-btn {
+    width: 100%;
+    padding: 1rem 2rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.auth-submit-btn:hover {
+    background: #7C3AED;
+    transform: translateY(-1px);
+    box-shadow: 0 3.2px 9.6px rgba(139, 92, 246, 0.3);
+}
+
+.auth-submit-btn.success {
+    background: #22C55E;
+}
+
+.auth-submit-btn.success:hover {
+    background: #16A34A;
+    box-shadow: 0 3.2px 9.6px rgba(34, 197, 94, 0.3);
+}
+
+.password-input-wrapper {
+    position: relative;
+}
+
+.password-toggle-btn {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--slate-500);
+    display: flex;
+    align-items: center;
+}
+
+/* ========================================
+   Add Student Form Styles
+   ======================================== */
+
+/* Form Typography */
+.student-form-section-title {
+    color: var(--slate-800);
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--slate-100);
+}
+
+.dark .student-form-section-title {
+    color: white !important;
+    border-bottom-color: #2C2C2C !important;
+}
+
+/* Form Grid */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+/* Labels */
+.form-label {
+    font-weight: 600;
+    color: var(--slate-700);
+    font-size: 0.875rem;
+    transition: color 0.2s;
+    display: block;
+    margin-bottom: 0;
+}
+
+.dark .form-label {
+    color: var(--slate-300) !important;
+}
+
+/* Inputs */
+.form-input {
+    width: 100%;
+    padding: 0.7rem 1rem !important;
+    border: 2px solid #E2E8F0 !important;
+    border-radius: 0.75rem;
+    font-size: 0.9375rem;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    background: white;
+    color: var(--slate-800);
+}
+
+.dark .form-input {
+    background-color: #121212 !important;
+    border-color: #2C2C2C !important;
+    color: #E2E8F0 !important;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3.2px rgba(139, 92, 246, 0.1);
+    transform: translateY(-1px);
+}
+
+.dark .form-input:focus {
+    border-color: var(--primary) !important;
+    box-shadow: 0 0 0 3.2px rgba(139, 92, 246, 0.2) !important;
+}
+
+.form-input:disabled {
+    background-color: var(--slate-100);
+    color: var(--slate-500);
+    opacity: 0.7;
+}
+
+.dark .form-input:disabled {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    color: var(--slate-400);
+    border-color: #2C2C2C;
+}
+
+/* Custom Select Arrow */
+select.form-input {
+    cursor: pointer;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748B'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: calc(100% - 1rem) center !important;
+    background-size: 1.25rem !important;
+    padding-right: 3rem !important;
+    border: 2px solid #E2E8F0 !important;
+    border-radius: 0.75rem !important;
+    background-color: white !important;
+    color: var(--slate-800) !important;
+}
+
+.dark select.form-input {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2394A3B8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: calc(100% - 1rem) center !important;
+    background-color: #262626 !important;
+    border-color: #2C2C2C !important;
+    color: white !important;
+}
+
+
+
+/* Password Toggle */
+.password-toggle {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--slate-400);
+    cursor: pointer;
+    padding: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+}
+
+.password-toggle:hover {
+    color: var(--slate-600);
+}
+
+.dark .password-toggle:hover {
+    color: var(--slate-300);
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 2.5rem;
+    align-items: center;
+}
+
+/* Cancel Button Custom Style */
+.btn-cancel-custom {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 3.5rem;
+    padding: 0 2.5rem;
+    background-color: #F1F5F9;
+    color: #475569;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.2s;
+    min-width: 112px;
+}
+
+.dark .btn-cancel-custom {
+    background-color: #334155 !important;
+    /* Dark slate */
+    color: white !important;
+    border: 1px solid #475569;
+}
+
+.student-management-page .btn-cancel-custom:hover {
+    background-color: #E2E8F0;
+    color: #1E293B;
+}
+
+.student-management-page.dark .btn-cancel-custom:hover,
+.dark .student-management-page .btn-cancel-custom:hover {
+    background-color: #475569 !important;
+}
+
+.student-management-page .auth-submit-btn {
+    flex: 1;
+    /* Make it fill remaining width */
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2rem;
+    background: #8B5CF6;
+    /* Vibrant Purple */
+    color: white;
+    border: none;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    gap: 0.5rem;
+    max-width: none;
+    /* Remove max-width constraint */
+}
+
+.student-management-page .auth-submit-btn:hover:not(:disabled) {
+    background: #7C3AED;
+    transform: translateY(-2px);
+    box-shadow: 0 6.4px 16px rgba(139, 92, 246, 0.3);
+}
+
+.student-management-page .auth-submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.student-management-page .btn-sm {
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+}
+
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========================================
+   Edit Student Specific Styles (Scoped)
+   ======================================== */
+
+.student-management-page .btn-move-semester {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.125rem;
+    border: none;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    height: 100%;
+}
+
+.student-management-page .btn-prev {
+    background: #64748B;
+    color: white;
+}
+
+.student-management-page .btn-next {
+    background: #22C55E;
+    color: white;
+}
+
+.student-management-page .btn-prev:hover:not(:disabled) {
+    background: #475569;
+}
+
+.student-management-page .btn-next:hover:not(:disabled) {
+    background: #16A34A;
+}
+
+.student-management-page .btn-move-semester:disabled {
+    background: #94a3b8 !important;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Custom Select Arrow Override for Edit Page */
+.student-management-page select.form-input {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748B'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.25rem;
+    padding-right: 3rem !important;
+}
+
+.dark .student-management-page select.form-input {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2394A3B8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+}
