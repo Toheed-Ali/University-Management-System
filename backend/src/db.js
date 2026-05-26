@@ -56,6 +56,34 @@ async function ensureAssignmentPlagiarismThresholdColumn() {
 }
 
 /**
+ * Ensure the login_rate_limits table exists.
+ *
+ * This table is defined in database/schema.sql (TABLE 15) and is required
+ * by the auth route for DB-backed brute-force rate limiting.
+ * Creating it here means the app works in development without needing to
+ * manually run schema.sql first.
+ */
+async function ensureRateLimitTable() {
+  const queryInterface = sequelize.getQueryInterface();
+  const tables = await queryInterface.showAllTables();
+  if (tables.includes('login_rate_limits')) return;
+
+  await queryInterface.createTable('login_rate_limits', {
+    id:            { type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true },
+    ip_key:        { type: Sequelize.STRING(255), allowNull: false, unique: true },
+    attempts:      { type: Sequelize.INTEGER, allowNull: false, defaultValue: 1 },
+    window_start:  { type: Sequelize.BIGINT, allowNull: false },
+    blocked_until: { type: Sequelize.BIGINT, allowNull: true, defaultValue: null },
+    createdAt:     { type: Sequelize.DATE, allowNull: false },
+    updatedAt:     { type: Sequelize.DATE, allowNull: false }
+  });
+
+  await queryInterface.addIndex('login_rate_limits', ['ip_key'],       { name: 'idx_lrl_ip_key' });
+  await queryInterface.addIndex('login_rate_limits', ['window_start'], { name: 'idx_lrl_window_start' });
+  console.log('✅ Created login_rate_limits table');
+}
+
+/**
  * Connect to MySQL database
  */
 async function connectToDatabase() {
@@ -80,6 +108,8 @@ async function connectToDatabase() {
 
       // Backfill older databases that were created before plagiarismThreshold existed.
       await ensureAssignmentPlagiarismThresholdColumn();
+      // Ensure rate-limit table exists (defined in database/schema.sql TABLE 15).
+      await ensureRateLimitTable();
     }
 
     return sequelize;

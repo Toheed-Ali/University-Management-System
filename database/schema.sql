@@ -316,6 +316,32 @@ CREATE TABLE assignment_submissions (
     INDEX idx_asub_assign_student         (assignmentId, studentId)
 );
 
+-- TABLE 15: LOGIN_RATE_LIMITS
+-- Stores per-IP login attempt counters for brute-force protection.
+-- Replaces the in-memory Map that was lost on every server restart
+-- and didn't work across multiple Node processes.
+--
+-- How it works:
+--   • Each row tracks one IP address (ip_key)
+--   • attempts counts tries within the current 15-minute window
+--   • blocked_until is set when attempts > 10; NULL means not blocked
+--   • Rows older than 24 hours are pruned automatically by the app
+CREATE TABLE login_rate_limits (
+    id            INT           NOT NULL AUTO_INCREMENT,
+    ip_key        VARCHAR(255)  NOT NULL COMMENT 'Client IP address',
+    attempts      INT           NOT NULL DEFAULT 1,
+    window_start  BIGINT        NOT NULL COMMENT 'Unix timestamp (ms) when the current window started',
+    blocked_until BIGINT        NULL     DEFAULT NULL COMMENT 'Unix timestamp (ms) until IP is hard-blocked; NULL = not blocked',
+    createdAt     DATETIME      NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updatedAt     DATETIME      NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+
+    CONSTRAINT pk_login_rate_limits   PRIMARY KEY (id),
+    CONSTRAINT uq_login_rate_limits   UNIQUE (ip_key),
+    CONSTRAINT chk_lrl_attempts       CHECK (attempts >= 1),
+    INDEX idx_lrl_ip_key              (ip_key),
+    INDEX idx_lrl_window_start        (window_start)
+);
+
 -- ============================================================
 -- FOREIGN KEY CONSTRAINTS
 -- ============================================================
