@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { Skeleton } from 'boneyard-js/react';
 import '../../pages/admin/AdminDashboard.css';
 
 const AdminDashboard = () => {
@@ -44,8 +43,7 @@ const AdminDashboard = () => {
             </div>
 
             {/* Stats Grid */}
-            <Skeleton name="admin-stats-grid" loading={loading} animate="shimmer" stagger transition>
-              <section className="stats-grid" id="statsGrid">
+            <section className="stats-grid" id="statsGrid">
                 <div className="card stat-card">
                     <div className="stat-icon">
                         <span className="material-symbols-outlined">school</span>
@@ -86,10 +84,8 @@ const AdminDashboard = () => {
                     </div>
                 </div>
             </section>
-            </Skeleton>
 
             {/* Main Grid */}
-            <Skeleton name="admin-dashboard-main" loading={loading} animate="shimmer" transition>
             <div className="main-grid">
                 {/* Quick Actions & Management */}
                 <div>
@@ -216,7 +212,6 @@ const AdminDashboard = () => {
                     </div>
                 </div>
             </div>
-            </Skeleton>
         </div>
     );
 };
