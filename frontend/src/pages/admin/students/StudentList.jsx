@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { Skeleton } from 'boneyard-js/react';
 import './StudentList.css';
 import '../AdminDashboard.css';
 
@@ -208,7 +209,13 @@ const StudentList = () => {
     const semesters = Object.keys(semesterMap).sort((a, b) => parseInt(a) - parseInt(b));
 
     if (loading) {
-        return <div className="p-10 text-center">Loading students...</div>;
+        return (
+            <div className="dashboard-container student-management-page">
+                <Skeleton name="student-list" loading={true} animate="shimmer" stagger transition>
+                    <div style={{ minHeight: '600px' }} />
+                </Skeleton>
+            </div>
+        );
     }
 
     return (
