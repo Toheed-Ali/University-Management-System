@@ -228,6 +228,11 @@
     background-color: var(--primary);
 }
 
+.dark .teacher-management-page .icon-btn.danger:hover {
+    background: #EF4444 !important;
+    color: white;
+}
+
 /* Primary Button */
 .teacher-management-page .btn-primary {
     display: inline-flex;

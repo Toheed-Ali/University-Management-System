@@ -278,6 +278,12 @@ h6 {
     background-color: rgba(255, 255, 255, 0.2);
     color: white;
     font-weight: 600;
+    outline: none;
+}
+
+.sidebar-item:focus,
+.sidebar-item:focus-visible {
+    outline: none;
 }
 
 .sidebar-footer {
@@ -569,7 +575,7 @@ h6 {
 
 .dark .card {
     background-color: var(--bg-card) !important;
-    border-color: var(--border-color);
+    border-color: #2c2c2c !important;
 }
 
 .stat-card {
@@ -678,7 +684,7 @@ h6 {
 
 .dark .action-card {
     background-color: #1E1E1E !important;
-    border-color: var(--slate-700);
+    border-color: #2c2c2c !important;
 }
 
 .action-card:hover {

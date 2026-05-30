@@ -268,7 +268,8 @@ const StudentList = () => {
                             placeholder="Search by name, roll number, or email..."
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
-                            style={{ width: '100%', padding: '0.75rem 1rem', border: '2px solid #E2E8F0', borderRadius: '0.75rem', fontSize: '0.9375rem' }}
+                            className="form-input"
+                            style={{ width: '100%' }}
                         />
                     </div>
                     <div>
@@ -278,7 +279,7 @@ const StudentList = () => {
                         <select
                             value={deptFilter}
                             onChange={(e) => setDeptFilter(e.target.value)}
-                            style={{ padding: '0.75rem 1rem', border: '2px solid #E2E8F0', borderRadius: '0.75rem', fontSize: '0.9375rem', color: '#1E293B', backgroundColor: 'white' }}
+                            className="form-input"
                         >
                             <option value="">All Departments</option>
                             {departments.map(d => (
@@ -293,7 +294,7 @@ const StudentList = () => {
                         <select
                             value={statusFilter}
                             onChange={(e) => setStatusFilter(e.target.value)}
-                            style={{ padding: '0.75rem 1rem', border: '2px solid #E2E8F0', borderRadius: '0.75rem', fontSize: '0.9375rem', color: '#1E293B', backgroundColor: 'white' }}
+                            className="form-input"
                         >
                             <option value="">All Status</option>
                             <option value="active">Active</option>
